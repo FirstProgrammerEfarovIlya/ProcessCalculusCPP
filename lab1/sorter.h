@@ -13,6 +13,8 @@ private:
     int __n;
     bool __asc;
 
+    void __quickSort(int *arr, int low, int high);
+
 public:
     Sorter(int *arr = nullptr, int n = 0, bool asc = true);
     void setList(int *arr, int n);
@@ -23,6 +25,10 @@ public:
     void bubleSort();
     void selectSort();
     void exchangeSort();
+    void insertSort();
+    void shellSort();
+    void combSort();
+    void quickSort();
     ~Sorter();
 
     friend void debugOutputList(const Sorter &sorter);

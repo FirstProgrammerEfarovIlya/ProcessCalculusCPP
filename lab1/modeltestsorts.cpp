@@ -17,8 +17,7 @@ void ModelTestSorts::stop_test()
 void ModelTestSorts::test()
 {
     __run = true;
-    VD x, y1, y2, y3;
-    VVD v;
+    QVector<double> x, y1, y2, y3, y4, y5, y6, y7;
     double p = 0.0;
 
     for (int i = 1; i <= __max_size / __step; i++)
@@ -29,30 +28,41 @@ void ModelTestSorts::test()
     int k = 0;
     for (int n = __step; n <= __max_size; n += __step)
     {
+        QVector<QVector<double>> v;
         int *arr = new int[n];
 
         x.push_back(n);
         y1.push_back(__middle_time(arr, n, &Sorter::bubleSort));
         y2.push_back(__middle_time(arr, n, &Sorter::selectSort));
         y3.push_back(__middle_time(arr, n, &Sorter::exchangeSort));
+        y4.push_back(__middle_time(arr, n, &Sorter::insertSort));
+        y5.push_back(__middle_time(arr, n, &Sorter::shellSort));
+        y6.push_back(__middle_time(arr, n, &Sorter::combSort));
+        y7.push_back(__middle_time(arr, n, &Sorter::quickSort));
 
         delete [] arr;
 
         k += n;
         emit progress(static_cast<int>(k / p));
 
+        v.push_back(y1);
+        v.push_back(y2);
+        v.push_back(y3);
+        v.push_back(y4);
+        v.push_back(y5);
+        v.push_back(y6);
+        v.push_back(y7);
+
+        __data.first = x;
+        __data.second = v;
+
+        emit progress_data(__data);
+
         if (!__run)
         {
             break;
         }
     }
-
-    v.push_back(y1);
-    v.push_back(y2);
-    v.push_back(y3);
-
-    __data.first = x;
-    __data.second = v;
 
     emit finished();
 }
@@ -149,7 +159,7 @@ int ModelTestSorts::maxSize() const
 
 
 
-PVDVVD ModelTestSorts::data() const
+QPair<QVector<double>, QVector<QVector<double>>> ModelTestSorts::data() const
 {
     return __data;
 }

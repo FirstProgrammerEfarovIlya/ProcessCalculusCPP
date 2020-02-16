@@ -19,10 +19,12 @@ public:
 
 private slots:
     void on_bt_explore_th_clicked();
-    void update_result();
+    void update_graphic(const QPair<QVector<double>, QVector<QVector<double>>> &data);
     void full_set_progress();
 
     void on_bt_cancel_th_clicked();
+
+    void on_bt_explore_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -23,7 +23,7 @@ private:
     int __step;
     int __max_size;                                     // max size testing array
     Sorter *sorter;
-    PVDVVD __data;
+    QPair<QVector<double>, QVector<QVector<double>>> __data;
     bool __run = false;
 
     void __random_fill_array(int *arr, int n);
@@ -42,7 +42,7 @@ public:
     void setMaxSize(int ms);
     int maxSize() const;
 
-    PVDVVD data() const;
+    QPair<QVector<double>, QVector<QVector<double>>> data() const;
 
     ~ModelTestSorts();
 
@@ -52,6 +52,7 @@ public slots:
 
 signals:
     void progress(int val);
+    void progress_data(const QPair<QVector<double>, QVector<QVector<double>>> &d);
     void finished();
 };
 
