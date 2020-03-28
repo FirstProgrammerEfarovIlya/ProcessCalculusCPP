@@ -6,10 +6,9 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../lab1/mainwindow.h"
+#include "../../ProcessCalculusRemoveWork/pc-lab1-FirstProgrammerEfarovIlya/Efarov/mainwindow.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
-#include <QtCore/QVector>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mainwindow.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
@@ -22,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[9];
-    char stringdata0[171];
+    QByteArrayData data[7];
+    char stringdata0[116];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,18 +35,14 @@ QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 24), // "on_bt_explore_th_clicked"
 QT_MOC_LITERAL(2, 36, 0), // ""
 QT_MOC_LITERAL(3, 37, 14), // "update_graphic"
-QT_MOC_LITERAL(4, 52, 49), // "QPair<QVector<double>,QVector..."
-QT_MOC_LITERAL(5, 102, 4), // "data"
-QT_MOC_LITERAL(6, 107, 17), // "full_set_progress"
-QT_MOC_LITERAL(7, 125, 23), // "on_bt_cancel_th_clicked"
-QT_MOC_LITERAL(8, 149, 21) // "on_bt_explore_clicked"
+QT_MOC_LITERAL(4, 52, 17), // "full_set_progress"
+QT_MOC_LITERAL(5, 70, 23), // "on_bt_cancel_th_clicked"
+QT_MOC_LITERAL(6, 94, 21) // "on_bt_explore_clicked"
 
     },
     "MainWindow\0on_bt_explore_th_clicked\0"
-    "\0update_graphic\0"
-    "QPair<QVector<double>,QVector<QVector<double> > >\0"
-    "data\0full_set_progress\0on_bt_cancel_th_clicked\0"
-    "on_bt_explore_clicked"
+    "\0update_graphic\0full_set_progress\0"
+    "on_bt_cancel_th_clicked\0on_bt_explore_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -66,14 +61,14 @@ static const uint qt_meta_data_MainWindow[] = {
 
  // slots: name, argc, parameters, tag, flags
        1,    0,   39,    2, 0x08 /* Private */,
-       3,    1,   40,    2, 0x08 /* Private */,
+       3,    0,   40,    2, 0x08 /* Private */,
+       4,    0,   41,    2, 0x08 /* Private */,
+       5,    0,   42,    2, 0x08 /* Private */,
        6,    0,   43,    2, 0x08 /* Private */,
-       7,    0,   44,    2, 0x08 /* Private */,
-       8,    0,   45,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 4,    5,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -88,13 +83,14 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->on_bt_explore_th_clicked(); break;
-        case 1: _t->update_graphic((*reinterpret_cast< const QPair<QVector<double>,QVector<QVector<double> > >(*)>(_a[1]))); break;
+        case 1: _t->update_graphic(); break;
         case 2: _t->full_set_progress(); break;
         case 3: _t->on_bt_cancel_th_clicked(); break;
         case 4: _t->on_bt_explore_clicked(); break;
         default: ;
         }
     }
+    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject MainWindow::staticMetaObject = { {

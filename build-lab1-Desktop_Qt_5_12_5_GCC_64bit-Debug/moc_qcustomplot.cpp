@@ -6,7 +6,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../lab1/qcustomplot.h"
+#include "../../ProcessCalculusRemoveWork/pc-lab1-FirstProgrammerEfarovIlya/Efarov/qcustomplot.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #include <QtCore/QSharedPointer>
