@@ -13,7 +13,7 @@ void calc_sum(int *arr, int n, int index, int step, int &sum)
     sum = 0;
     for (int i = index; i < n; i += step)
     {
-        sum += int(10 * sin(sin(sin(sin(arr[i])))));
+        sum += int(10 * sin(sin(sin(sin(arr[i])))) * sin(sin(sin(sin(arr[i])))));
     }
 }
 
@@ -105,38 +105,20 @@ int main()
 }
 
 
-//void calc_sum(int *arr, long int n, long int index, int step, long int &sum)
-//{
-//    sum = 0;
-//    for (long int i = index; i < n; i += step)
-//    {
-//        sum += arr[i];
-//    }
-//}
-
-
-//void rand_array(int *arr, long int n, int a = 0, int b = 10)
-//{
-//    for (long int i = 0; i < n; i++)
-//    {
-//        arr[i] = rand() % (b - a) + a;
-//    }
-//}
-
 
 //int main()
 //{
 //    srand(static_cast<unsigned>(time(nullptr)));
-//    const long int max_count = 100000000;
+//    const int max_count = 200000000;
 //    for (int m = 1; m <= 10; m++)
 //    {
-//        for (long int n = 10; n <= max_count; n *= 10)
+//        for (int n = 140000000; n <= max_count; n += 10000000)
 //        {
 //            struct timeval tv0, tv1;        // time variables
 //            gettimeofday(&tv0, nullptr);
 
 //            int *arr = new int[n];
-//            long int *sums = new long int[m];
+//            int *sums = new int[m];
 //            rand_array(arr, n);
 
 //            std::thread **ths = new std::thread*[m];
@@ -147,7 +129,7 @@ int main()
 //            }
 
 
-//            long int sum = 0;
+//            int sum = 0;
 //            for (int i = 0; i < m; i++)
 //            {
 //                ths[i]->join();
@@ -171,7 +153,8 @@ int main()
 //            double time = static_cast<double>(tv1.tv_usec - tv0.tv_usec) / 1000000
 //                    + static_cast<double>(tv1.tv_sec - tv0.tv_sec);
 
-//            cout << "n: " << n << "; m: " << m << "; time: " << fixed << setprecision(9) << time << endl;
+////            cout << "n: " << n << "; m: " << m << "; time: " << fixed << setprecision(9) << time << endl;
+//            cout << n << ";" << m << ";" << fixed << setprecision(9) << time << endl;
 //        }
 //    }
 //    return 0;
