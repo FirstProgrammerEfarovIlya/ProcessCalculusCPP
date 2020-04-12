@@ -7,13 +7,20 @@
 
 using namespace std;
 
+const int MAX_COUNT_SIN = 20;
+
 
 void calc_sum(int *arr, int n, int index, int step, int &sum)
 {
     sum = 0;
     for (int i = index; i < n; i += step)
     {
-        sum += int(10 * sin(sin(sin(sin(arr[i])))) * sin(sin(sin(sin(arr[i])))));
+        int element = arr[i];
+        for (int j = 0; j < MAX_COUNT_SIN; j++)
+        {
+            element = int(10 * sin(element));
+        }
+        sum += element;
     }
 }
 
@@ -40,8 +47,11 @@ void print_array(int *arr, int n)
 
 int main()
 {
-    cout << std::thread::hardware_concurrency() << endl;
     srand(static_cast<unsigned>(time(nullptr)));
+
+    cout << "Programm: many thread calculate sum" << endl;
+    cout << endl;
+
     int n, m;
     do
     {
