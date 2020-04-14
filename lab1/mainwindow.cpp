@@ -101,11 +101,6 @@ void MainWindow::update_graphic(const QPair<QVector<double>, QVector<QVector<dou
 
     ui->graphic_widget->graph(6)->setName("быстрая");
 
-//    ui->widget->graph(7)->setData(x8, y8);
-
-//    ui->widget->graph(7)->setPen(QPen(Qt::darkRed));
-
-//    ui->widget->graph(7)->setName("merge sort");
 
 
     ui->graphic_widget->axisRect()->setupFullAxesBox();
